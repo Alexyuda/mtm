@@ -18,7 +18,7 @@ D_vis = Image.fromarray(np.uint8(255*D))
 font = ImageFont.truetype("arial.ttf", 25)
 draw_D = ImageDraw.Draw(D_vis)
 draw_image = ImageDraw.Draw(image)
-draw_image.rectangle([(min_loc[1][0], min_loc[0][0]), (min_loc[1][0]+patch.size[0], min_loc[0][0]+patch.size[0])]
+draw_image.rectangle([(min_loc[1][0] - 0.5*patch.size[0], min_loc[0][0] - 0.5*patch.size[1]), (min_loc[1][0] + 0.5*patch.size[0], min_loc[0][0] + 0.5*patch.size[1])]
                      , outline=0)
 
 draw_D.text((10, 10), 'Distance map', fill=0, font=font)
