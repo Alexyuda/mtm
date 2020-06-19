@@ -3,8 +3,8 @@ import numpy as np
 
 
 def MTM_PWC(image, patch, alpha):
-        # "Matching by Tone Mapping: Photometric Invariant Template Matching"
-        # Y. Hel-Or, H.Hel-Or, E.David.
+    # "Matching by Tone Mapping: Photometric Invariant Template Matching"
+    # Y. Hel-Or, H.Hel-Or, E.David.
     # image = PIL grayscale image.
     # patch = PIL image grayscale pattern
     # alpha = k+1 vector of gray bin values.
@@ -30,5 +30,7 @@ def MTM_PWC(image, patch, alpha):
 
     D = (W2 - D1) / D2
     return D
+
+
 
 
