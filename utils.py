@@ -14,9 +14,9 @@ def ransac_points(src_pnts, dst_pnts, th=5.0):
 
 
 def warp_image(img, M):
-    img_cv = np.array(img)[:, :, 0]
+    img_cv = np.array(img)
     warped_image_cv = cv2.warpPerspective(img_cv, M, (img_cv.shape[1], img_cv.shape[0]))
-    warped_image = Image.fromarray(warped_image_cv).convert('LA')
+    warped_image = Image.fromarray(warped_image_cv)
     return warped_image
 
 
@@ -38,8 +38,6 @@ def show_matches(src_img, dst_img, src_pnts, dst_pnts, title=None):
     match_img.show()
 
 def show_blend_images(img1, img2, title=None):
-    img1 = img1.convert('RGB')
-    img2 = img2.convert('RGB')
     alphaBlended = Image.blend(img1, img2, alpha=.5)
     if title is not None:
         draw = ImageDraw.Draw(alphaBlended)
